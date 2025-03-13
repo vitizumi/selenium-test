@@ -17,7 +17,7 @@ public class BasePage {
     }
 
     protected void set(By locator, String text) {
-        find(locator);
+        find(locator).clear();
         find(locator).sendKeys(text);
     }
 

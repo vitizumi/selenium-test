@@ -1,7 +1,5 @@
 package part3_4.com.demoqa.test.part3.elements;
 
-import static com.base.BasePage.delay;
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

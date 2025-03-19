@@ -13,7 +13,6 @@ public class SmallModalTest extends BaseTest {
         var modalDialogsPage = alertsPage.clickModalDialogsMenu();
         modalDialogsPage.openSmallModal();
         String actualText = modalDialogsPage.getSmallModalText();
-        System.out.println(actualText);
         Assert.assertTrue(actualText.contains("small modal"), "\n The message does not contain 'small modal' \n");
         modalDialogsPage.closeSmallModal();
     }

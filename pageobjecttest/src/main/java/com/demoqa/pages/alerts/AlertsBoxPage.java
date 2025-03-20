@@ -7,6 +7,7 @@ public class AlertsBoxPage extends AlertsPage {
     private By alertConfirmButton = By.id("confirmButton");
     private By alertConfirmResults = By.id("confirmResult");
     private By alertPromptButton = By.id("promtButton");
+    private By alertPromptResults = By.id("promptResult");
 
     public void clickAlertDefaultButton () {
         click(alertDefaultButton);
@@ -18,5 +19,13 @@ public class AlertsBoxPage extends AlertsPage {
 
     public String getAlertConfirmResult () {
         return find(alertConfirmResults).getText();
+    }
+    
+    public void clickAlertPromptButton () {
+        click(alertPromptButton);
+    }
+
+    public String getAlertPromptResult () {
+        return find(alertPromptResults).getText();
     }
 }

@@ -5,7 +5,6 @@ import org.testng.annotations.Test;
 
 import part3_4.com.demoqa.base.BaseTest;
 
-import static com.base.BasePage.delay;
 import static utilities.SwitchToUtility.*;
 
 public class AlertsTest extends BaseTest {
@@ -28,5 +27,16 @@ public class AlertsTest extends BaseTest {
         String expectedConfirmationResult = "You selected Cancel";
 
         Assert.assertEquals(actualConfirmationResult, expectedConfirmationResult, "\n You did not select Cancel \n");
+    }
+
+    @Test
+    public void testPromptAlert() {
+        String expectedResults = "testprompt";
+        var alertsPage = homePage.goToAlerts().clickAlertsMenu();
+        alertsPage.clickAlertPromptButton();
+        setAlertText(expectedResults);
+        acceptAlert();
+        String actualResults = alertsPage.getAlertPromptResult();
+        Assert.assertTrue(actualResults.contains(expectedResults), "\n Prompt Response does not match what was typed \n");
     }
 }
